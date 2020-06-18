@@ -1,22 +1,22 @@
 #include <stdio.h>
+int main(void)
+{
+	int i, n;
+	int factorial = 1;
+	printf("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	scanf_s("%d", &n);
 
-int factorial(int);
-
-int main() {
-	int n, res;
-	printf("nì…ë ¥ : ");
-	scanf("%d", &n);
-	res = factorial(n);
-	printf("%d! = %d", n, res);
-}
-
-int factorial(int n) {
-	int i, res;
-	res = 1;
-	if (n == 0)	
-		res = 1;
+	if (n == 1)
+		printf("This number factorial is 0\n");
 	else
-		for (i = n; i > 1; i--)
-			res *= i;
-	return res;
+	{
+		for (i = 1; i <= n; i++)
+		{
+			printf("number list is %d\n", i);
+			factorial = factorial * i;
+		}
+		printf("This number factorial is %d\n", factorial);
+
+	}
+	return 0;
 }
