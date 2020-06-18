@@ -30,8 +30,8 @@ if '__iter__' in has_tuple_iter:
     print("Tuple has an iter")
 if '__iter__' in has_dict_iter:
     print("Dictionary has an iter")
-
 # 네가지 객체 모두 iter를 가지고 있음
+
 now = iter(next_list)
 print(next(now))
 now = iter(next_tuple)
@@ -39,11 +39,15 @@ print(next(now))
 now = iter(next_dict)
 print(next(now))
 now = iter(range(5))
-print(next(now))
+print(next(now)) # 0
 # 리스트,튜플,딕셔너리,튜플 모두 iter를 가지고 있으며 iter함수로 변환한 뒤 next함수를 통해 호출 -> 각 원소의 첫번째값(딕셔너리는 키값기준)
-print(next(now))
-print(next(now))
-# 마지막에담긴 iter객체를 기준으로 다음값을 계속꺼내다가
-print(next(now))
-print(next(now))
-print(next(now))
+
+print(next(now)) # 1
+print(next(now)) # 2
+# 마지막에담긴 iter객체(Range(5))를 기준으로 다음값을 계속꺼내다가
+
+print(next(now)) # 3
+print(next(now)) # 4
+print(next(now)) # 5-> 에러발생
+# 더이상 꺼낼 값이 없다면 StopIteration를 발생
+
